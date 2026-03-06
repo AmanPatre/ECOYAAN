@@ -3,7 +3,7 @@
 This is a simplified 3-step checkout flow built as part of the Ecoyaan frontend assessment.
 
 ## 🚀 Live Demo
-[Insert Vercel Link Here]
+https://ecoyaan-eta.vercel.app/
 
 ## 🛠️ Tech Stack & Architecture
 
