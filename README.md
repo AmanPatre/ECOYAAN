@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ecoyaan Checkout Flow MVP
 
-## Getting Started
+This is a simplified 3-step checkout flow built as part of the Ecoyaan frontend assessment.
 
-First, run the development server:
+## 🚀 Live Demo
+[Insert Vercel Link Here]
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠️ Tech Stack & Architecture
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS & inline styles for quick, responsive, consistent UI.
+- **State Management**: React Context API (`CartContext`). 
+    - *Why Context?* For a 3-step checkout flow without complex prop-drilling, Context API is lightweight and built into React, avoiding the boilerplate and bundle size overhead of Redux.
+- **Data Fetching (SSR)**: Server Components (`page.tsx`) load the mock data synchronously/statically and pass it down to Client Components (`CartPageClient.tsx`) to hydrate the initial state. This ensures zero layout shift and fast initial loads while maintaining interactivity.
+- **Icons**: `lucide-react` for clean, consistent SVG iconography.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📱 User Flow Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Cart Screen (`/cart`)**: Displays items fetched via SSR. Calculates subtotal, savings, shipping, and grand total. Allows quantity adjustments.
+2. **Shipping Address Screen (`/checkout`)**: A multi-step form simulation with basic HTML5/Regex validation for required fields, email format, and a 10-digit phone number.
+3. **Payment Method (`/payment`)**: Simulates various payment gateways (UPI, Cards, Netbanking). Displays final address and order summary.
+4. **Order Success (`/success`)**: Final confirmation state.
 
-## Learn More
+## 💻 How to Run Locally
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) with your browser. Navigate to `/cart` to begin the flow.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 Notes on Implementation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- To prevent build errors on deployment platforms like Vercel (where `localhost` fetches during SSR fail), the mock cart data is exported directly from a central file instead of being fetched via an HTTP `fetch()` request. This maintains the SSR pattern while ensuring robust deployment.
+- The UI mimics the clean, green-themed, trust-oriented aesthetic typical of sustainable e-commerce platforms.
