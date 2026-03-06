@@ -7,7 +7,6 @@ import { MessageCircle, Sparkles, MapPin } from 'lucide-react';
 import { CartData } from '../context/CartContext';
 import { useCart } from '../context/CartContext';
 import CartItemCard from '../components/CartItemCard';
-import ProgressSteps from '../components/ProgressSteps';
 interface Props {
     initial: CartData;
 }
@@ -29,6 +28,7 @@ export default function CartPageClient({ initial }: Props) {
 
     return (<>
         <div style={{ background: '#f5f5f5', minHeight: '100vh', paddingBottom: 40 }}>
+            <div style={{ height: 32 }} />
             <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 16px' }}>
                 <h1
                     style={{
@@ -65,7 +65,7 @@ export default function CartPageClient({ initial }: Props) {
                                         <CartItemCard key={item.product_id} item={item} />
                                     ))}
 
-                                    {/* Totals below items */}
+
                                     <div style={{ paddingTop: 16, paddingBottom: 8 }}>
                                         <div
                                             style={{
@@ -113,7 +113,7 @@ export default function CartPageClient({ initial }: Props) {
 
                     </div>
                     <div style={{ width: 320, flexShrink: 0 }}>
-                        {/* Pricing card */}
+
                         <div className="card" style={{ padding: 20, marginBottom: 16 }}>
                             <div
                                 style={{
@@ -163,7 +163,7 @@ export default function CartPageClient({ initial }: Props) {
                                 Proceed to Checkout →
                             </button>
 
-                            {/* WhatsApp */}
+
                             <div
                                 style={{
                                     display: 'flex',
@@ -181,7 +181,7 @@ export default function CartPageClient({ initial }: Props) {
                             </div>
                         </div>
 
-                        {/* Savings banner */}
+
                         {totalSavings > 0 && (
                             <div className="savings-banner" style={{ marginBottom: 16 }}>
                                 <Sparkles size={22} color="#277c4e" />
@@ -196,7 +196,7 @@ export default function CartPageClient({ initial }: Props) {
                             </div>
                         )}
 
-                        {/* Delivery address preview */}
+
                         <div className="card" style={{ padding: 20 }}>
                             <div
                                 style={{

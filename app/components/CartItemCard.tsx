@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Trash2, Heart, Copy } from 'lucide-react';
+import { Heart, Copy } from 'lucide-react';
 import { CartItem as CartItemType } from '../context/CartContext';
 import { useCart } from '../context/CartContext';
 
@@ -82,13 +82,6 @@ export default function CartItemCard({ item }: Props) {
                             title="Copy link"
                         >
                             <Copy size={16} />
-                        </button>
-                        <button
-                            style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#e53935', padding: 2 }}
-                            title="Remove"
-                            onClick={() => updateQuantity(item.product_id, -99)}
-                        >
-                            <Trash2 size={16} />
                         </button>
                     </div>
                 </div>

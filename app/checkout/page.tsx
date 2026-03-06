@@ -113,6 +113,7 @@ export default function CheckoutPage() {
 
     return (
         <div style={{ background: '#f5f5f5', minHeight: '100vh', paddingBottom: 48 }}>
+            <div style={{ height: 32 }} />
             <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 16px' }}>
 
                 <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start', flexWrap: 'wrap' }}>
