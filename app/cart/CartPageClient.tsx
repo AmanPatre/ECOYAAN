@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { MessageCircle, Sparkles, MapPin } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { CartData } from '../context/CartContext';
 import { useCart } from '../context/CartContext';
 import CartItemCard from '../components/CartItemCard';
@@ -195,39 +195,6 @@ export default function CartPageClient({ initial }: Props) {
                                 </div>
                             </div>
                         )}
-
-
-                        <div className="card" style={{ padding: 20 }}>
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center',
-                                    marginBottom: 10,
-                                }}
-                            >
-                                <span style={{ fontWeight: 700, fontSize: 14, color: '#212121' }}>
-                                    Delivery address:
-                                </span>
-                                <Link href="/checkout">
-                                    <button className="btn-eco-outline" style={{ fontSize: 12, padding: '4px 12px' }}>
-                                        Change
-                                    </button>
-                                </Link>
-                            </div>
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'flex-start',
-                                    gap: 6,
-                                    color: '#555',
-                                    fontSize: 13,
-                                }}
-                            >
-                                <MapPin size={14} color="#277c4e" style={{ marginTop: 2, flexShrink: 0 }} />
-                                <span>Add your delivery address during checkout</span>
-                            </div>
-                        </div>
                     </div>
 
 
